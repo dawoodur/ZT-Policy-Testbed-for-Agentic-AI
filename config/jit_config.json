@@ -1,0 +1,5 @@
+{
+  "issuer": "azt-gateway",
+  "ttl_seconds": 15,
+  "single_use": true
+}

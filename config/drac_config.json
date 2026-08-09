@@ -1,0 +1,33 @@
+{
+  "weights": {
+    "identity": 0.15,
+    "sensitivity": 0.40,
+    "context": 0.25,
+    "behavior": 0.20
+  },
+
+  "thresholds": {
+    "NORMAL": 0.60,
+    "ELEVATED": 0.50,
+    "CRITICAL": 0.35
+  },
+
+  "action_sensitivity": {
+    "READ_TEMPERATURE": 0.10,
+    "READ_PRESSURE": 0.10,
+    "GET_STATE": 0.25,
+    "SET_VALVE": 0.80,
+    "START_PUMP": 0.80,
+    "STOP_PUMP": 1.00
+  },
+
+  "operational_context_risk": {
+    "NORMAL_OPERATION": 0.10,
+    "PEAK_OPERATION": 0.80,
+    "EMERGENCY": 1.00
+  },
+
+  "default_identity_risk": 0.30,
+
+  "behavior_violation_cap": 3
+}

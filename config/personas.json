@@ -1,0 +1,47 @@
+{
+  "agent_01": {
+    "persona_name": "read_only_monitor",
+
+    "job_description": "Monitor PLC telemetry and operational state without modifying the physical process.",
+
+    "authorized_resources": [
+      "PLC_1"
+    ],
+
+    "allowed_actions": [
+      "READ_TEMPERATURE",
+      "READ_PRESSURE",
+      "GET_STATE"
+    ],
+
+    "behavioral_invariants": [
+      "Must not modify PLC actuator state",
+      "Must not start or stop pumps",
+      "Must not open or close valves"
+    ]
+  },
+
+  "control_agent_01": {
+    "persona_name": "process_control_agent",
+
+    "job_description": "Monitor PLC state and perform authorized process-control operations when operational context permits.",
+
+    "authorized_resources": [
+      "PLC_1"
+    ],
+
+    "allowed_actions": [
+      "READ_TEMPERATURE",
+      "READ_PRESSURE",
+      "GET_STATE",
+      "SET_VALVE",
+      "START_PUMP",
+      "STOP_PUMP"
+    ],
+
+    "behavioral_invariants": [
+      "Control actions must remain within the authorized PLC resource",
+      "High-risk operations are subject to contextual risk evaluation"
+    ]
+  }
+}
